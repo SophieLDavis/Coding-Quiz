@@ -1,12 +1,11 @@
 var startButton = document.querySelector('#start');
 var userAnswer = document.querySelector('#choices');
 var quizTimer =document.querySelector('#time');
-//var questions= document.querySelector('.hide');
-//var counter=100;
+var questions= document.querySelector('#questions');
+var title= document.querySelector('#question-title');
 
 //var counter = document.querySelector('#time')
-//var startScreen= document.querySelector('#wrapper')
-
+var startScreen= document.querySelector('#start-screen')
 
 var startTimer= function(){
 var counter=100;
@@ -19,15 +18,23 @@ quizTimer.textContent = counter
 }, 1000)
 }
 
-
 //start the timer
 function startQuiz(){
 startTimer()
 console.log("hi")
-//questions.setAttribute('class', 'visible')
+startScreen.setAttribute('class', 'hide')
+questions.setAttribute('class', 'visible')
+questionTitle()
+createChoiceList()
 }
 
+//should createElement create a button?
+///var userChoice= 
 
+//
+
+
+//setAttribute(name, value)
 
 startButton.addEventListener('click', startQuiz);{
 

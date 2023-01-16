@@ -2,9 +2,9 @@
 
 Create a code quiz that contains the following requirements:
 
-A start button that when clicked a timer starts and the first question appears.
+*A start button that when clicked a timer starts* 
 
-Questions contain buttons for each answer.
+When the start button is clicked the question and answer options appear, contain buttons for each answer.
 
 
 When answer is clicked, the next question appears
