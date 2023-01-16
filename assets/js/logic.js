@@ -19,7 +19,7 @@ quizTimer.textContent = counter
 }
 
 //start the timer
-function startQuiz(){
+var startQuiz= function(){
 startTimer()
 console.log("hi")
 startScreen.setAttribute('class', 'hide')
@@ -27,6 +27,16 @@ questions.setAttribute('class', 'visible')
 questionTitle()
 createChoiceList()
 }
+
+var questionTitle= function(){
+var qTitle=[]
+for(i=0; i<title.length; i++); {
+qTitle= quizQuestions[i][0]
+title.textContent= qTitle;
+} 
+}
+
+
 
 //should createElement create a button?
 ///var userChoice= 
