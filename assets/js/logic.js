@@ -29,7 +29,7 @@ createChoiceList()
 //function to add question to page heading 
 var questionTitle= function(){
 for(i=0; i<title.length; i++); {
-var qTitle= quizQuestions[i][0]
+var qTitle= quizQuestions[i]
 title.textContent= qTitle;
 } 
 }
@@ -39,8 +39,8 @@ var createChoiceList= function(){
 var choiceList= document.createElement('ul')
 choicesContainer.appendChild(choiceList)
 var questionChoices=[]
-for(i=0; i<1; i++) {
-questionChoices= quizQuestions[i][1]
+for(i=0; i<4; i++) {
+questionChoices= answers[i]// answers[0], answers[1], answers[2]
 var choice= document.createElement('li')
 choiceList.appendChild(choice)
 choice.textContent= questionChoices
