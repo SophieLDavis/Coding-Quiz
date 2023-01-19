@@ -41,7 +41,7 @@ choicesContainer.appendChild(choiceList)
 var questionChoices=[]
 for(i=0; i<4; i++) {
 questionChoices= answers[i]// answers[0], answers[1], answers[2]
-var choice= document.createElement('li')
+var choice= document.createElement('button')
 choiceList.appendChild(choice)
 choice.textContent= questionChoices
 }
