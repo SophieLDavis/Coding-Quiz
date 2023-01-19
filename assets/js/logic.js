@@ -28,9 +28,8 @@ createChoiceList()
 
 //function to add question to page heading 
 var questionTitle= function(){
-var qTitle=[]
 for(i=0; i<title.length; i++); {
-qTitle= quizQuestions[i][0]
+var qTitle= quizQuestions[i][0]
 title.textContent= qTitle;
 } 
 }
@@ -40,17 +39,14 @@ var createChoiceList= function(){
 var choiceList= document.createElement('ul')
 choicesContainer.appendChild(choiceList)
 var questionChoices=[]
-for(i=0; i<questionChoices.length; i++) {
+for(i=0; i<1; i++) {
 questionChoices= quizQuestions[i][1]
-console.log("hi")
-//console.log(questionChoices)
 var choice= document.createElement('li')
 choiceList.appendChild(choice)
 choice.textContent= questionChoices
-//questionChoices.appendChild("li")
 }
 }
-//how do i know that createElement("ul") is created where i want it? i.e in .choices 
+
 
 
 
