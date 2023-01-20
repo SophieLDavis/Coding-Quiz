@@ -2,6 +2,7 @@
 //I need to be able to call : the questions[i]
 //the answers 
 //store the user choice 
+
 var quizQuestions=[
 ["Question One: What does HTML stand for?"],
 ["Question Two: What are the CSS properties that are used to add space around sections of content?"],
@@ -12,6 +13,7 @@ var quizQuestions=[
 ["Question Seven: In JavaScript, what element is used to store multiple values in a single variable?"],
 ["Question Eight: In JavaScript, what element is used to store multiple values in a single variable?"]
 ]
+
 
 /* var answersQOne = { 
     A:"Hyper Trainer Marking Language", B:"Hyper Text Marketing Language", C:"Hyper Text Markup Language", D:"Hyper Text Markup Leveler", Answer:"C"}
