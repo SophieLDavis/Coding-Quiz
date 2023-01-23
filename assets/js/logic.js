@@ -4,6 +4,7 @@ var quizTimer =document.querySelector('#time');
 var questions= document.querySelector('#questions');
 var title= document.querySelector('#question-title')
 var startScreen= document.querySelector('#start-screen')
+var endScreen= document.querySelector('#end-screen')
 
 //Add question one choices to page 
 var createChoiceList= function(){
@@ -12,10 +13,13 @@ choicesContainer.appendChild(choiceList)
 for(i=0; i<4; i++) { 
 var choice= document.createElement('button')
 choiceList.appendChild(choice)
-choice.textContent= answers[0][i]
+choice.textContent= questionChoices[0][i]
 }}
+
 //show the next question 
 currentQuestion=0
+var userChoice=0;//click event/user choice
+var score=0;
 var nextQuestion= function() {
 currentQuestion++
 if (currentQuestion< quizQuestions.length) {
@@ -27,9 +31,23 @@ choicesContainer.appendChild(choiceList)
 for(i=0; i<4; i++) { 
 var choice= document.createElement('button')
 choiceList.appendChild(choice)
-choice.textContent= answers[currentQuestion][i]
-} 
-}}
+choice.textContent= questionChoices[currentQuestion][i] 
+
+//check if chosen answer is correct
+} if (userChoice===answers[currentQuestion]){ 
+console.log('correct')
+//if correct, add 1 to score, 
+score++
+//nextQuestion()
+//check if chosen answer is incorrect
+} if (userChoice!=answers[currentQuestion]){
+console.log('incorrect')
+//remove 10 seconds from the interval
+//counter-10 //counter is not defined 
+//nextQuestion()
+}
+}
+}
 
 //first event listener
 startButton.addEventListener('click', function() {
@@ -41,12 +59,12 @@ title.textContent= quizQuestions[0]
 createChoiceList()
 
 //start timer
-var counter=100;
+var counter=10
 var runTimer= setInterval(function() {
 quizTimer.textContent = counter 
 counter--
-if (counter<=0) {
-//endGame()
+if (counter===0) {
+endGame()
 }
 }, 1000)
 })
@@ -56,9 +74,12 @@ choicesContainer.addEventListener('click',function() {
 nextQuestion()
 })
 
-//Another click event listener for choices
-//    Check answer
-//        if correct, add 1 to score, call nextQuestion()
-//        if wrong, remove 10 seconds from the interval, call nextQuestion
+//show quiz 'finish' page
+function endGame(){
+questions.setAttribute('class', 'hide')
+endScreen.setAttribute('class', 'visible')
+}
 
-//when button is clicked, answer[0][i] is replaced with [0][i+3]
+var saveHighscore= function(){
+
+}
