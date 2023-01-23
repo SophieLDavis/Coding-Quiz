@@ -5,6 +5,8 @@ var questions= document.querySelector('#questions');
 var title= document.querySelector('#question-title')
 var startScreen= document.querySelector('#start-screen')
 var endScreen= document.querySelector('#end-screen')
+var initials= document.querySelector('#initials')
+var finalScore= document.querySelector('#final-score')
 
 //Add question one choices to page 
 var createChoiceList= function(){
@@ -33,18 +35,19 @@ var choice= document.createElement('button')
 choiceList.appendChild(choice)
 choice.textContent= questionChoices[currentQuestion][i] 
 
-//check if chosen answer is correct
+//check if chosen answer is correct, add 1 to score
 } if (userChoice===answers[currentQuestion]){ 
 console.log('correct')
-//if correct, add 1 to score, 
 score++
 //nextQuestion()
-//check if chosen answer is incorrect
+//check if chosen answer is incorrect, remove 10 seconds from the interval
 } if (userChoice!=answers[currentQuestion]){
 console.log('incorrect')
-//remove 10 seconds from the interval
 //counter-10 //counter is not defined 
 //nextQuestion()
+
+//add final score to end page
+finalScore.innerHTML= score 
 }
 }
 }
@@ -78,8 +81,26 @@ nextQuestion()
 function endGame(){
 questions.setAttribute('class', 'hide')
 endScreen.setAttribute('class', 'visible')
+var textEndScreen= document.createElement('p')
+endScreen.appendChild(textEndScreen)
+textEndScreen.innerHTML= "If you'd like your information to be saved on to the Highscores page, please enter your initials and click the Submit button."
 }
 
-var saveHighscore= function(){
 
-}
+
+
+/* endScreen.addEventListener('click',function() {
+var initialInput= initials[input].value() // how to access #input=text (’input[name=”test”]’)
+var initial = initialInput.value.trim()
+
+var userSave= 0
+alert("Would you like to save your score on the Highscores board?")
+if (true){
+    localStorage.setItem.keyName(score, initial)
+
+    localstorage.get/setItem.keyName(key, key)
+
+saveHighscore(initial)
+redirect to highscore page
+
+*/
