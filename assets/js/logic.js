@@ -50,7 +50,8 @@ var nextQuestion = function () {
 
 var counter=0
 //first event listener
-startButton.addEventListener('click', function () {
+startButton.addEventListener('click', function (e) {
+    e.preventDefault;
     startScreen.setAttribute('class', 'hide')
     questions.setAttribute('class', 'visible')
 
@@ -72,8 +73,6 @@ startButton.addEventListener('click', function () {
 
 //second event listener, when a choice button is clicked 
 choicesContainer.addEventListener('click', function (event) {
-    console.log(event.target)
-    console.log(answers[currentQuestion])
     var target= event.target.getAttribute('data-text')
     if (target=== answers[currentQuestion][0]){
         score++
@@ -87,33 +86,35 @@ choicesContainer.addEventListener('click', function (event) {
 function endGame() {
     questions.setAttribute('class', 'hide')
     endScreen.setAttribute('class', 'visible')
-    var textEndScreen = document.createElement('p')
+    var textEndScreen = document.createElement('p') 
     endScreen.appendChild(textEndScreen)
     textEndScreen.innerHTML = "If you'd like your information to be saved on to the Highscores page, please enter your initials and click the Submit button."
 }
 
 //event listener saving initials to local storage
-submit.addEventListener('click', function () {
-    let initial = document.getElementById("initials").value.trim();
+submit.addEventListener('click', function (e) {
+    e.preventDefault;
+    let initial = document.getElementById("initials").value;
     localStorage.setItem("name", initial);
     localStorage.setItem("score", score);
 
 
-    console.log(initial)
-    //var initialInput = initials[input].value()
-    //var initial = initialInput.value.trim()
-  //  localStorage.setItem("name",initial)
-    //localStorage.setItem("name", JSON.stringify(initial))
-   // localStorage.setItem("score", score)
-/* 
-//create div on highscores page to 
-var hSList= document.createElement('li')
-highScores.appendChild(hSList)
-var storageName= localStorage.getItem("name", initial);
-var storageScore= localStorage.getItem("score", score);
-hSList.appendChild(storageName)
-hSList.appendChild(storageScore)*/
+/* var getName= localStorage.getItem("name");
+console.log(getName) //  initial 
+//var getScore= localStorage.getItem("score");
+
+var hScores= document.createElement('li')
+highScores.appendChild(hScores)
+var scoresList= document.getElementById("li") // null 
+scoresList.innerHTML= getName
+// <li> getName : getScore </li>
+//hScores.innerHTML=getScore;
+console.log(scoresList) */
+//highScores.appendChild(hScores); // append score from local storage to list  */
 }) 
+
+//if ()
+
 //save highscore to Highscores page - local storage 
 //save initials to highscores - local storage 
 
