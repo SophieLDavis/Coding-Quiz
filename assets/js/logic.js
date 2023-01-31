@@ -9,6 +9,7 @@ var initials = document.querySelector('#initials')
 var finalScore = document.querySelector('#final-score')
 var clear= document.querySelector('#clear')
 var highScores= document.querySelector('#highscores')
+var submit= document.querySelector('#submit')
 
 //Add question one choices to page 
 var createChoiceList = function () {
@@ -58,7 +59,7 @@ startButton.addEventListener('click', function () {
     createChoiceList()
 
     //start timer
-    counter = 20
+    counter = 5
     var runTimer = setInterval(function () {
 
         quizTimer.textContent = counter
@@ -92,14 +93,32 @@ function endGame() {
 }
 
 //event listener saving initials to local storage
-endScreen.addEventListener('click', function () {
-    var initialInput = initials[input].value()
-    var initial = initialInput.value.trim()
-    localStorage.setItem("name", initial)
-    localStorage.setItem("score", score)
-    //highScores= localStorage.getItem("name", initial);
-    //highScores= localStorage.getItem("score", score);
-})
+submit.addEventListener('click', function () {
+    let initial = document.getElementById("initials").value.trim();
+    localStorage.setItem("name", initial);
+    localStorage.setItem("score", score);
 
+
+    console.log(initial)
+    //var initialInput = initials[input].value()
+    //var initial = initialInput.value.trim()
+  //  localStorage.setItem("name",initial)
+    //localStorage.setItem("name", JSON.stringify(initial))
+   // localStorage.setItem("score", score)
+/* 
+//create div on highscores page to 
+var hSList= document.createElement('li')
+highScores.appendChild(hSList)
+var storageName= localStorage.getItem("name", initial);
+var storageScore= localStorage.getItem("score", score);
+hSList.appendChild(storageName)
+hSList.appendChild(storageScore)*/
+}) 
 //save highscore to Highscores page - local storage 
 //save initials to highscores - local storage 
+
+//// set new submission
+//localStorage.setItem("user", JSON.stringify(user));
+    
+// get most recent submission
+//var lastUser = JSON.parse(localStorage.getItem("user"));
