@@ -1,8 +1,3 @@
-
-//I need to be able to call : the questions[i]
-//the answers 
-//store the user choice 
-
 var quizQuestions=[
 ["Question One: What does HTML stand for?"],
 ["Question Two: What are the CSS properties that are used to add space around sections of content?"],

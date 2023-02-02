@@ -30,7 +30,7 @@ var score = 0;
 var nextQuestion = function () {
     currentQuestion++
     if (currentQuestion < quizQuestions.length) {
-        title.textContent = quizQuestions[currentQuestion];
+        title.textContent = quizQuestions[currentQuestion]
         //clear choice container and show next set of choices
         choicesContainer.innerHTML = ''
         var choiceList = document.createElement('ul')
@@ -40,12 +40,12 @@ var nextQuestion = function () {
             choice.setAttribute('data-text', questionChoices[currentQuestion][i])
             choiceList.appendChild(choice)
             choice.textContent = questionChoices[currentQuestion][i]
-        //add final score to end page
-        finalScore.innerHTML = score
-        if (currentQuestion > quizQuestions.length) 
-                endGame() 
-
-    }}}
+            //add final score to end page
+            finalScore.innerHTML = score
+    //} else {
+        //endGame()
+    }}
+}
 
 
 var counter=0
@@ -93,33 +93,11 @@ function endGame() {
 
 //event listener saving initials to local storage
 submit.addEventListener('click', function (e) {
+    var textEndScreen2 = document.createElement('p') 
+    endScreen.appendChild(textEndScreen2)
+    textEndScreen2.innerHTML = "Thankyou, your information has been saved."
     e.preventDefault;
     let initial = document.getElementById("initials").value;
     localStorage.setItem("name", initial);
     localStorage.setItem("score", score);
-
-
-/* var getName= localStorage.getItem("name");
-console.log(getName) //  initial 
-//var getScore= localStorage.getItem("score");
-
-var hScores= document.createElement('li')
-highScores.appendChild(hScores)
-var scoresList= document.getElementById("li") // null 
-scoresList.innerHTML= getName
-// <li> getName : getScore </li>
-//hScores.innerHTML=getScore;
-console.log(scoresList) */
-//highScores.appendChild(hScores); // append score from local storage to list  */
 }) 
-
-//if ()
-
-//save highscore to Highscores page - local storage 
-//save initials to highscores - local storage 
-
-//// set new submission
-//localStorage.setItem("user", JSON.stringify(user));
-    
-// get most recent submission
-//var lastUser = JSON.parse(localStorage.getItem("user"));
