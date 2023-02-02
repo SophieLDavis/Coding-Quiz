@@ -60,7 +60,7 @@ startButton.addEventListener('click', function (e) {
     createChoiceList()
 
     //start timer
-    counter = 5
+    counter = 30
     var runTimer = setInterval(function () {
 
         quizTimer.textContent = counter
